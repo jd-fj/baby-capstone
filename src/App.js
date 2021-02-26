@@ -9,15 +9,15 @@ import 'firebase/auth'; //for authentication
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDrD-iQ56W7ESAaNoqEhi8jCf8PwyEkPMk",
-  authDomain: "chat-tutorial-69c44.firebaseapp.com",
-  projectId: "chat-tutorial-69c44",
-  storageBucket: "chat-tutorial-69c44.appspot.com",
-  messagingSenderId: "471462513622",
-  appId: "1:471462513622:web:cfa6c9ff677b99ffde3277"
-}
-firebase.initializeApp(firebaseConfig);
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDrD-iQ56W7ESAaNoqEhi8jCf8PwyEkPMk",
+//   authDomain: "chat-tutorial-69c44.firebaseapp.com",
+//   projectId: "chat-tutorial-69c44",
+//   storageBucket: "chat-tutorial-69c44.appspot.com",
+//   messagingSenderId: "471462513622",
+//   appId: "1:471462513622:web:cfa6c9ff677b99ffde3277"
+// }
+// firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
