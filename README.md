@@ -17,3 +17,4 @@ After 8.0.0;
 -Researching if maybe I could use useFirestoreConnect's isLoaded instead of async on line 59?
 
 - I really don't know how to make this tutorial run without putting the api key in the app. It's not processing the string correctly? So I suspect I'm not importing it correctly? but all the research for importing is saying that I'm doing it as expected? 
+
