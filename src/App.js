@@ -57,6 +57,7 @@ function SignOut(){
 }
 
 function ChatRoom() {
+  const scroll = useRef(); //auto scroll to bottom div with this hook
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
   const [messages] = useCollectionData(query, {idField: 'id'}); //listen to data with a hook, each obj is the chat message. 
@@ -73,13 +74,16 @@ function ChatRoom() {
       photoURL
     });
     setFormValue(''); //reset form value to blank
+    scroll.current.scrollIntoView({ behavior: 'smooth' }); //scroll to bottom whenever user sends a message
   }
 
   return (
   <>
-    <div>
+    <main>
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}
-    </div>
+    
+      <div ref={scroll}></div>
+    </main>
 
     <form onSubmit={sendMessage}>
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
