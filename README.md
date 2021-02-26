@@ -13,3 +13,5 @@ After 8.0.0;
 -having trouble getting firebase to initialize in my project without putting the configuration snippet in App.js. Thinking I should build out something I know how to make (like the help queue) and try to combine these two projecets. 
 
 -why doesn't my project work?
+
+-Researching if maybe I could use useFirestoreConnect's isLoaded instead of async on line 59?
