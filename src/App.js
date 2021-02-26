@@ -22,6 +22,7 @@ function App() {
     <div className="App">
       <header>
         <h1>hello</h1>
+        <SignOut/>
       </header>
 
       <section>
