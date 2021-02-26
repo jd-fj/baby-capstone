@@ -71,9 +71,20 @@ function ChatRoom() {
 }
 
 function ChatMessage(props) { //child of ChatRoom
-  const { text, uid } = props.message;
+  const { text, uid, photoURL } = props.message;
+  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received'; //conditional CSS, if they're equal current user sent the message. This way we can conditionally style based on if the message was sent or received.
 
-  return <p>{text}</p>
+
+
+
+
+  return (
+    
+    <div className={`message ${messageClass}`}> 
+      <img src={photoURL}/> 
+      <p>{text}</p>
+    </div>
+  )
 }
 
 export default App;
