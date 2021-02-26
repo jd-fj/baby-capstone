@@ -8,16 +8,15 @@ import 'firebase/auth'; //for authentication
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-
-firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
-})
+const firebaseConfig = {
+  apiKey: "AIzaSyDrD-iQ56W7ESAaNoqEhi8jCf8PwyEkPMk",
+  authDomain: "chat-tutorial-69c44.firebaseapp.com",
+  projectId: "chat-tutorial-69c44",
+  storageBucket: "chat-tutorial-69c44.appspot.com",
+  messagingSenderId: "471462513622",
+  appId: "1:471462513622:web:cfa6c9ff677b99ffde3277"
+}
+firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -71,6 +70,10 @@ function ChatRoom() {
   );
 }
 
+function ChatMessage(props) { //child of ChatRoom
+  const { text, uid } = props.message;
 
+  return <p>{text}</p>
+}
 
 export default App;
