@@ -10,7 +10,7 @@ service cloud.firestore {
     //match the path to the messages collection in database
     match /messages/{docId} {
       allow read: if request.auth.uid != null; //when user wants to read a doc make sure the're logged in
-      allow create; if canCreateMessage(); 
+      allow create: if canCreateMessage(); 
     }
     
     function canCreateMessage() {
