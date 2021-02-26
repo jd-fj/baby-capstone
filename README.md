@@ -11,3 +11,5 @@ After 8.0.0;
 ```import firebase from 'firebase/app'```
 
 -having trouble getting firebase to initialize in my project without putting the configuration snippet in App.js. Thinking I should build out something I know how to make (like the help queue) and try to combine these two projecets. 
+
+-why doesn't my project work?
