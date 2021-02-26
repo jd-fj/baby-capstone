@@ -8,7 +8,7 @@ import 'firebase/auth'; //for authentication
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-//call initializeApp to identify our project 
+
 firebase.initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -18,8 +18,7 @@ firebase.initializeApp({
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 })
-// const { auth } = config.auth();
-// const { firestore } = config.firestore();
+
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
@@ -41,7 +40,11 @@ function App() {
 }
 
 function SignIn()  {
-  
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  }
+
   return (
     <button onClick={signInWithGoogle}>Sign in with Googs</button>
   )
@@ -52,5 +55,7 @@ function SignOut(){
     <button onClick={() => auth.signOut()}>Let Me Out</button>
   )
 }
+
+
 
 export default App;
